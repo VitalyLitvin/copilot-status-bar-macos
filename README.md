@@ -1,5 +1,7 @@
 # Copilot Statusbar for macOS
 
+![Copilot Statusbar showing "Needs your input" in the macOS menu bar](docs/screenshots/hero.png)
+
 Native macOS menu bar app for [GitHub Copilot CLI](https://github.com/github/copilot-cli).
 
 It shows one of three states in the menu bar, based on the `copilot` CLI process:
@@ -9,6 +11,10 @@ It shows one of three states in the menu bar, based on the `copilot` CLI process
 - **working 3m**, **working 1h 12m**, etc. (blue icon) — Copilot CLI is actively generating a response / running a tool
 
 Click the menu bar item for details (PID, CPU usage, current command) and quick actions.
+
+Here's what it looks like among your other menu bar icons:
+
+![Copilot Statusbar highlighted among other macOS menu bar icons](docs/screenshots/menu-bar-context.png)
 
 ## Install (recommended for end users)
 
