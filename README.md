@@ -1,5 +1,12 @@
 # Copilot Statusbar for macOS
 
+[![Latest release](https://img.shields.io/github/v/release/VitalyLitvin/copilot-status-bar-macos?label=release)](https://github.com/VitalyLitvin/copilot-status-bar-macos/releases/latest)
+[![License: MIT](https://img.shields.io/github/license/VitalyLitvin/copilot-status-bar-macos)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-macOS%2013%2B-blue)](#install-recommended-for-end-users)
+[![Universal binary](https://img.shields.io/badge/binary-Apple%20Silicon%20%2B%20Intel-success)](#install-recommended-for-end-users)
+[![Swift](https://img.shields.io/badge/Swift-6.0-orange?logo=swift)](Package.swift)
+[![GitHub stars](https://img.shields.io/github/stars/VitalyLitvin/copilot-status-bar-macos?style=social)](https://github.com/VitalyLitvin/copilot-status-bar-macos/stargazers)
+
 ![Copilot Statusbar showing "Needs your input" in the macOS menu bar](docs/screenshots/hero.png)
 
 Native macOS menu bar app for [GitHub Copilot CLI](https://github.com/github/copilot-cli).
