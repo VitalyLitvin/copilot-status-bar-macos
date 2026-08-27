@@ -5,8 +5,10 @@ APP_DIR := dist/$(APP_NAME).app
 CONTENTS := $(APP_DIR)/Contents
 MACOS := $(CONTENTS)/MacOS
 RESOURCES := $(CONTENTS)/Resources
+DMG_STAGING := dist/dmg-staging
+DMG_PATH := dist/$(APP_NAME).dmg
 
-.PHONY: build run app install uninstall clean
+.PHONY: build run app install uninstall dmg clean
 
 build:
 	swift build -c release
@@ -52,6 +54,17 @@ install: app
 
 uninstall:
 	rm -rf "/Applications/$(APP_NAME).app"
+
+# Builds a drag-to-install DMG: user opens it and drags the .app onto the
+# Applications shortcut, same as any other macOS app.
+dmg: app
+	rm -rf "$(DMG_STAGING)" "$(DMG_PATH)"
+	mkdir -p "$(DMG_STAGING)"
+	cp -R "$(APP_DIR)" "$(DMG_STAGING)/"
+	ln -s /Applications "$(DMG_STAGING)/Applications"
+	hdiutil create -volname "$(APP_NAME)" -srcfolder "$(DMG_STAGING)" -ov -format UDZO "$(DMG_PATH)"
+	rm -rf "$(DMG_STAGING)"
+	@echo "Created $(DMG_PATH)"
 
 clean:
 	rm -rf .build dist
