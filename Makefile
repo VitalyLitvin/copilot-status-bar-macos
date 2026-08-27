@@ -1,6 +1,7 @@
 APP_NAME := Copilot Statusbar
 BINARY := copilot-statusbar
-BUILD_DIR := .build/release
+# Universal binary (Apple Silicon + Intel) so the app works on any Mac.
+BUILD_DIR := .build/apple/Products/Release
 APP_DIR := dist/$(APP_NAME).app
 CONTENTS := $(APP_DIR)/Contents
 MACOS := $(CONTENTS)/MacOS
@@ -11,7 +12,7 @@ DMG_PATH := dist/$(APP_NAME).dmg
 .PHONY: build run app install uninstall dmg clean
 
 build:
-	swift build -c release
+	swift build -c release --arch arm64 --arch x86_64
 
 run:
 	swift run
